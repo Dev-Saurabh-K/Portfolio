@@ -12,11 +12,11 @@ const page = () => {
       <div className="w-full my-3 ">
         <NavigationMenuDemo />
       </div>
-      <div className=" flex justify-center h-fit lg:h-[950px] mb-[50px]">
+      <div className=" flex justify-center h-fit lg:h-[950px] lg:pt-10 mb-[50px]">
         <ProfileCard/>
       </div>
       <div className="flex lg:pl-52 ">
-        <SkillsLogo title="Skills"/>
+        <SkillsLogo title="Skills" className="size-[100px] {text-3xl}"/>
       </div>
       <div className="flex justify-center flex-wrap h-fit gap-5 mb-10">
         <Skills/>
@@ -24,10 +24,10 @@ const page = () => {
       <div className="flex justify-center flex-wrap h-fit lg:px-20 gap-5 flex-col">
         <Projects/>
       </div>
-      <div className="flex justify-center flex-wrap items-center">
+      {/* <div className="flex justify-center flex-wrap items-center h-96 px-3 lg:px-20">
 
         <ContactMe/>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -10,6 +10,8 @@ const Projects = () => {
     description: string;
     img: string;
     color: string;
+    bg: string;
+    hbg: string;
   }[] = [
     {
       title: "Image to Doc",
@@ -17,6 +19,8 @@ const Projects = () => {
       live: "https://dev-saurabh-k.github.io/image-to-doc",
       img: "/planner.png",
       color: "border-blue-500",
+      bg: "bg-blue-500/70",
+      hbg: "hover:bg-blue-500",
       description:
         "A tool that converts images into downloadable documents using AI-powered text extraction and formatting.",
     },
@@ -26,6 +30,8 @@ const Projects = () => {
       live: "https://planner-v2-dsk.vercel.app/",
       img: "/planner.png",
       color: "border-pink-300",
+      bg: "bg-pink-300/70",
+      hbg: "hover:bg-pink-500",
       description:
         "A planning and productivity application designed to manage schedules, tasks, and daily workflows efficiently.",
     },
@@ -35,6 +41,8 @@ const Projects = () => {
       live: "#servered",
       img: "/planner.png",
       color: "border-slate-500",
+      bg: "bg-slate-500/70",
+      hbg: "hover:bg-slate-500",
       description:
         "A backend server project showcasing APIs, authentication flow, and modular server-side structure.",
     },
@@ -44,6 +52,8 @@ const Projects = () => {
       live: "#greeting",
       img: "/planner.png",
       color: "border-orange-500",
+      bg: "bg-orange-500/70",
+      hbg: "hover:bg-orange-500",
       description:
         "An app that generates customized greeting cards with dynamic styling and personalized messages.",
     },
@@ -51,10 +61,10 @@ const Projects = () => {
 
   return (
     <>
-      <div className="pl-40">
-        <SkillsLogo title="My Projects" />
+      <div className="pl-40 ">
+        <SkillsLogo title="My Projects" className="border size-40 " />
       </div>
-      <Card className="lg-px-20 sm:px-3 rounded-2xl bg-primary">
+      <Card className="lg-px-20 sm:px-3 rounded-2xl bg-accent">
         {components.map((component) => (
           <Card
             key={component.href}
@@ -66,18 +76,20 @@ const Projects = () => {
               className="h-32 w-[90%] md:h-[220px] md:[330px] lg:h-[220px] lg:w-[330px] border-2 border-primary rounded-2xl"
             />
             <div className="flex flex-col gap-3 m-3">
-              <div className="text-blue-500 text-3xl">{component.title}</div>
+              <div className="text-accent-foreground font-bold text-3xl">{component.title}</div>
               <div>{component.description}</div>
               <div className="flex flex-row gap-3 flex-wrap justify-center">
                 <a href={component.live}>
-                <Button className="cursor-pointer w-[150px] bg-blue-600 text-white hover:bg-blue-400">Live Site</Button>
-              </a>
-              <a href={component.href}>
-                <Button className="cursor-pointer w-[150px] bg-accent text-white hover:bg-card">
-                  Github Repo
-                </Button>
-              </a>
-              {/* <img src="/down.svg" alt="" className="size-10"/> */}
+                  <Button className={`cursor-pointer w-[150px] text-white ${component.bg} ${component.hbg}`}>
+                    Live Site
+                  </Button>
+                </a>
+                <a href={component.href}>
+                  <Button className="cursor-pointer w-[150px] bg-accent text-white hover:bg-card">
+                    Github Repo
+                  </Button>
+                </a>
+                {/* <img src="/down.svg" alt="" className="size-10"/> */}
               </div>
             </div>
           </Card>

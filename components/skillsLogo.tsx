@@ -1,17 +1,18 @@
-import React from 'react'
+import React from "react";
 
 interface SkillsLogoProps {
-  title: string | number ;
+  title: string | number;
+  className?: string;
 }
 
-const SkillsLogo: React.FC<SkillsLogoProps>= ({title}) => {
-
-  
+const SkillsLogo: React.FC<SkillsLogoProps> = ({ title, className }) => {
   return (
-    <div className='bg-blue-600 size-[100px] flex justify-end items-end text-3xl font-bold '>
-        {title}
+    <div
+      className={`bg-blue-600 flex justify-end items-end text-xl font-bold ${className}`}
+    >
+      {title}
     </div>
-  )
-}
+  );
+};
 
-export default SkillsLogo
+export default SkillsLogo;

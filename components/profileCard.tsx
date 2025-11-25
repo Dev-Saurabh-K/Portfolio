@@ -116,7 +116,7 @@ const profileCard = () => {
   ];
 
   return (
-    <Card className="flex flex-row flex-wrap lg:w-11/12 rounded-2xl">
+    <Card className="flex flex-row flex-wrap lg:h-fit  lg:w-11/12 rounded-2xl">
       {/* <div className=" w-fit mx-3 bg-amber-50 flex justify-center">
         <img
           src="image.png"
@@ -139,7 +139,7 @@ const profileCard = () => {
             <span key={word.key} className={`${word.color}`}>
               {word.word}{" "}
             </span>
-          ))}
+          ))}"
           <div className="flex justify-center gap-5 mt-5"><Button className="rounded-3xl">Download Resume</Button>
           <Button className="rounded-3xl bg-accent-foreground">Contact Me</Button></div>
           

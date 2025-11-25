@@ -92,7 +92,7 @@ const Skills = () => {
     },
   ];
 
-  const CLISkills = [
+ const CLISkills = [
     {
       name: "Git",
       logo: "/git.svg",
@@ -164,7 +164,7 @@ const Skills = () => {
           <Card key={skill.logo} className={`w-full flex flex-row rounded-2xl`}>
             <img src={skill.logo} alt="" className="size-14" />
             <div className="flex flex-col w-full">
-              <div className="flex justify-between flex-row">
+              <div className="flex justify-between flex-row gap-2">
                 <div className="font-bold">{skill.name}</div>
                 <div className={`${skill.theme}`}>{skill.title}</div>
               </div>
@@ -176,7 +176,7 @@ const Skills = () => {
       <Card className="flex justify-center flex-wrap lg:w-5/12 px-10 rounded-2xl w-full h-fit">
         <div>Backendend Tech Stack</div>
         {backendSkills.map((skill) => (
-          <Card key={skill.logo} className={`w-full flex flex-row`}>
+          <Card key={skill.logo} className={`w-full flex flex-row rounded-2xl`}>
             <img src={skill.logo} alt="" className="size-14" />
             <div className="flex flex-col w-full">
               <div className="flex justify-between flex-row">
@@ -191,7 +191,7 @@ const Skills = () => {
       <Card className="flex justify-center flex-wrap lg:w-5/12 px-10 rounded-2xl w-full h-fit">
         <div>CLI Tech Stack</div>
         {CLISkills.map((skill) => (
-          <Card key={skill.logo} className={`w-full flex flex-row`}>
+          <Card key={skill.logo} className={`w-full flex flex-row rounded-2xl`}>
             <img src={skill.logo} alt="" className="size-14" />
             <div className="flex flex-col w-full">
               <div className="flex justify-between flex-row">
@@ -206,7 +206,7 @@ const Skills = () => {
       <Card className="flex justify-center flex-wrap lg:w-5/12 px-10 rounded-2xl w-full h-fit">
         <div>AI tools Tech Stack</div>
         {AISkills.map((skill) => (
-          <Card key={skill.logo} className={`w-full flex flex-row`}>
+          <Card key={skill.logo} className={`w-full flex flex-row rounded-2xl`}>
             <img src={skill.logo} alt="" className="size-14" />
             <div className="flex flex-col w-full">
               <div className="flex justify-between flex-row">

@@ -4,6 +4,7 @@ import ProfileCard from "@/components/profileCard";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import SkillsLogo from "@/components/skillsLogo";
+import ContactMe from "@/components/contact";
 
 const page = () => {
   return (
@@ -14,15 +15,19 @@ const page = () => {
       <div className=" flex justify-center h-fit lg:h-[950px] mb-[50px]">
         <ProfileCard/>
       </div>
-      <div className="flex lg:pl-20 ">
+      <div className="flex lg:pl-52 ">
         <SkillsLogo title="Skills"/>
       </div>
-      <div className="flex justify-center flex-wrap h-fit gap-5">
+      <div className="flex justify-center flex-wrap h-fit gap-5 mb-10">
         <Skills/>
       </div>
-      {/* <div className="flex justify-center flex-wrap h-fit gap-5 flex-col">
+      <div className="flex justify-center flex-wrap h-fit lg:px-20 gap-5 flex-col">
         <Projects/>
-      </div> */}
+      </div>
+      <div className="flex justify-center flex-wrap items-center">
+
+        <ContactMe/>
+      </div>
     </div>
   );
 };

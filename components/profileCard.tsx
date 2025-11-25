@@ -133,7 +133,7 @@ const profileCard = () => {
             I Am Saurabh Kumar
           </div>
         </div>
-        <div className="text-3xl my-10 mx-2 font-mono ">
+        <div className="text-3xl sm:text-2xl my-10 mx-2 font-mono ">
           "
           {aboutWords.map((word) => (
             <span key={word.key} className={`${word.color}`}>

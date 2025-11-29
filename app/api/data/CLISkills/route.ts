@@ -1,7 +1,7 @@
 
 
 export async function GET() {
-  console.log(process.env.DATABASE_URL);
+  // console.log(process.env.DATABASE_URL);
     return Response.json([
     {
       name: "Git",

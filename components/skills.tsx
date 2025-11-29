@@ -13,7 +13,7 @@ type Skill = {
 
 const Skills = async () => {
   const response1 = await fetch(
-    "http://localhost:3000/api/data/frontendskills",
+    "https://dev-saurabh-k.xyz/api/data/frontendskills",
     {
       cache: "no-store",
     }
@@ -21,7 +21,7 @@ const Skills = async () => {
   const frontendSkills: Skill[] = await response1.json();
 
   const response2 = await fetch(
-    "http://localhost:3000/api/data/backendSkills",
+    "https://dev-saurabh-k.xyz/api/data/backendSkills",
     {
       cache: "no-store",
     }
@@ -29,7 +29,7 @@ const Skills = async () => {
   const backendSkills: Skill[] = await response2.json();
 
   const response3 = await fetch(
-    "http://localhost:3000/api/data/CLISkills",
+    "https://dev-saurabh-k.xyz/api/data/CLISkills",
     {
       cache: "no-store",
     }
@@ -37,7 +37,7 @@ const Skills = async () => {
   const CLISkills: Skill[] = await response3.json();
 
   const response4 = await fetch(
-    "http://localhost:3000/api/data/AISkills",
+    "https://dev-saurabh-k.xyz/api/data/AISkills",
     {
       cache: "no-store",
     }

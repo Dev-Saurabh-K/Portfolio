@@ -2,177 +2,48 @@ import { title } from "process";
 import { Card } from "./ui/card";
 import { Progress } from "@/components/ui/progress";
 
-const Skills = () => {
-  const frontendSkills = [
-    {
-      name: "HTML",
-      logo: "/html-light.svg",
-      percentage: 96,
-      title: "Markup language for structuring pages",
-      theme: "text-orange-500",
-      border: "border-orange-500",
-    },
-    {
-      name: "CSS",
-      logo: "/css-light.svg",
-      percentage: 93,
-      title: "Styling language for designing web pages",
-      theme: "text-blue-500",
-      border: "border-blue-500",
-    },
-    {
-      name: "JavaScript",
-      logo: "/javascript.svg",
-      percentage: 80,
-      title: "Programming language for web interactivity",
-      theme: "text-yellow-400",
-      border: "border-yellow-500",
-    },
-    {
-      name: "Tailwind CSS",
-      logo: "/tailwind.svg",
-      percentage: 85,
-      title: "Utility-first CSS framework for fast UI development",
-      theme: "text-sky-400",
-      border: "border-sky-500",
-    },
-    {
-      name: "React JS",
-      logo: "/reactjs.svg",
-      percentage: 75,
-      title: "JavaScript library for building UI components",
-      theme: "text-cyan-400",
-      border: "border-cyan-500",
-    },
-    {
-      name: "NEXT JS",
-      logo: "/nextjs-light.svg",
-      percentage: 65,
-      title: "React framework for full-stack and server-rendered apps",
-      theme: "text-white-800",
-      border: "border-white-500",
-    },
-  ];
-  const backendSkills = [
-    {
-      name: "Node JS",
-      logo: "/nodejs.svg",
-      percentage: 70,
-      title: "JavaScript runtime built on Chrome's V8 engine",
-      theme: "text-green-500",
-      border: "border-green-500",
-    },
-    {
-      name: "Express JS",
-      logo: "/Express.svg",
-      percentage: 65,
-      title: "Minimal and flexible Node.js web application framework",
-      theme: "text-gray-300",
-      border: "border-gray-300",
-    },
-    {
-      name: "TypeScript",
-      logo: "/typescript.svg",
-      percentage: 40,
-      title: "Typed superset of JavaScript for scalable development",
-      theme: "text-blue-600",
-      border: "border-blue-600",
-    },
-    {
-      name: "Socket.io",
-      logo: "/socket.svg",
-      percentage: 65,
-      title: "Protocol for real-time, two-way communication",
-      theme: "text-purple-400",
-      border: "border-purple-400",
-    },
-    {
-      name: "JSON Web Token (JWT)",
-      logo: "/jwt.svg",
-      percentage: 70,
-      title: "Secure token-based authentication standard",
-      theme: "text-yellow-500",
-      border: "border-yellow-500",
-    },
-    {
-      name: "MongoDB",
-      logo: "/mongodb.svg",
-      percentage: 73,
-      title: "Highly Flexible no-sql database using mongoose ODM",
-      theme: "text-green-400",
-      border: "border-green-400",
-    },
-  ];
+type Skill = {
+    name: string;
+    logo: string;
+    percentage: number;
+    title: string;
+    theme: string;
+    border: string;
+  };
 
-  const CLISkills = [
+const Skills = async () => {
+  const response1 = await fetch(
+    "http://localhost:3000/api/data/frontendskills",
     {
-      name: "Git",
-      logo: "/git.svg",
-      percentage: 65,
-      title: "CLI tool for version control",
-      theme: "text-orange-400",
-      border: "border-orange-400",
-    },
-    {
-      name: "Linux",
-      logo: "/linux.svg",
-      percentage: 66,
-      title: "Open-source operating system for development & servers",
-      theme: "text-yellow-400",
-      border: "border-yellow-400",
-    },
-    {
-      name: "Bash",
-      logo: "/bash.svg",
-      percentage: 40,
-      title: "Command-line shell for automation and scripting",
-      theme: "text-green-300",
-      border: "border-green-300",
-    },
-    {
-      name: "Docker",
-      logo: "/docker.svg",
-      percentage: 32,
-      title: "Containerization platform for packaging applications",
-      theme: "text-blue-400",
-      border: "border-blue-400",
-    },
-  ];
+      cache: "no-store",
+    }
+  );
+  const frontendSkills: Skill[] = await response1.json();
 
-  const AISkills = [
+  const response2 = await fetch(
+    "http://localhost:3000/api/data/backendSkills",
     {
-      name: "LangChain",
-      logo: "/langchain.svg",
-      percentage: 40,
-      title: "Framework for building LLM-powered applications",
-      theme: "text-green-400",
-      border: "border-green-400",
-    },
+      cache: "no-store",
+    }
+  );
+  const backendSkills: Skill[] = await response2.json();
+
+  const response3 = await fetch(
+    "http://localhost:3000/api/data/CLISkills",
     {
-      name: "Web Scraping",
-      logo: "/scraping.svg",
-      percentage: 42,
-      title: "Extracting structured information from websites",
-      theme: "text-yellow-400",
-      border: "border-yellow-400",
-    },
+      cache: "no-store",
+    }
+  );
+  const CLISkills: Skill[] = await response3.json();
+
+  const response4 = await fetch(
+    "http://localhost:3000/api/data/AISkills",
     {
-      name: "OpenAI",
-      logo: "/openai.svg",
-      percentage: 50,
-      title: "API for generative AI models and assistants",
-      theme: "text-purple-400",
-      border: "border-purple-400",
-    },
-    {
-      name: "Gemini SDK",
-      logo: "/gemini.svg",
-      percentage: 50,
-      title: "Google’s SDK for building AI applications with Gemini models",
-      theme: "text-blue-400",
-      border: "border-blue-400",
-    },
-  ];
+      cache: "no-store",
+    }
+  );
+  const AISkills: Skill[] = await response4.json();
+  
 
   return (
     <>

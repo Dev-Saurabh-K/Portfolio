@@ -1,17 +1,6 @@
-import { Fira_Code } from "next/font/google";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Split } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
 const profileCard = () => {
   const colors = {
     keyword: "text-[#569CD6]",
@@ -139,11 +128,19 @@ const profileCard = () => {
             <span key={word.key} className={`${word.color}`}>
               {word.word}{" "}
             </span>
-          ))}"
-          <div className="flex justify-center gap-5 mt-5"><Button className="rounded-3xl">Download Resume</Button>
-          <Button className="rounded-3xl bg-accent-foreground">Contact Me</Button></div>
-          
-        
+          ))}
+          "
+          <div className="flex justify-center gap-5 mt-5">
+            <a href="/Resume.pdf" download="/Resume.pdf">
+              <Button className="rounded-3xl cursor-pointer">
+                Download Resume
+              </Button>
+            </a>
+
+            <Button className="rounded-3xl bg-accent-foreground">
+              Contact Me
+            </Button>
+          </div>
           <div className=" flex justify-end mt-3">
             <Badge variant="default">Verified</Badge>
           </div>

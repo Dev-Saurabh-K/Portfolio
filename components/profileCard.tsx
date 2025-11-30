@@ -125,7 +125,7 @@ const profileCard = () => {
         <div className=" lg:text-2xl text-xl my-10 mx-2 font-mono ">
           "
           {aboutWords.map((word) => (
-            <span key={word.key} className={`${word.color}`}>
+            <span key={word.key} className={`${word.color} sm:text-2xl`}>
               {word.word}{" "}
             </span>
           ))}
